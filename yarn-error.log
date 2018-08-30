@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn init
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.11.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:126002:13)
+      at emitNone (events.js:106:13)
+      at Interface.emit (events.js:208:7)
+      at Interface._ttyWrite (readline.js:774:16)
+      at ReadStream.onkeypress (readline.js:158:10)
+      at emitTwo (events.js:126:13)
+      at ReadStream.emit (events.js:214:7)
+      at emitKeys (internal/readline.js:420:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1010:36)
+
+npm manifest: 
+  {
+    "name": "mern",
+    "version": "1.0.0",
+    "description": "Mern Demo",
+    "main": "server.js",
+    "scripts": {
+      "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+      "start:prod": "node server.js",
+      "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+      "client": "cd client && npm run start",
+      "install": "cd client && yarn install",
+      "build": "cd client && npm run build",
+      "heroku-postbuild": "npm run build"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "concurrently": "^3.5.0",
+      "nodemon": "^1.11.0"
+    },
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "express": "^4.16.3",
+      "if-env": "^1.0.4",
+      "mongoose": "^5.2.9",
+      "mongoose-validators": "^0.1.0",
+      "morgan": "^1.9.0",
+      "path": "^0.12.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
